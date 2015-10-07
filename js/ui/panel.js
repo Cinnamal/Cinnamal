@@ -1661,7 +1661,7 @@ Panel.prototype = {
             centerMinWidth = Math.max(centerMinWidth, 25);
             centerNaturalWidth = Math.max(centerNaturalWidth, 25);
         }
-
+	
         let totalMinWidth = leftMinWidth + centerMinWidth + rightMinWidth;
         let totalNaturalWidth = leftNaturalWidth + centerNaturalWidth + rightNaturalWidth;
 
@@ -1669,8 +1669,7 @@ Panel.prototype = {
 
         if (centerBoxOccupied) {
             if (totalMinWidth < allocWidth) {
-            	/* New centering code may need debugging.*/
-                let totalWant = totalNaturalWidth - totalMinWidth;
+                let totalWant = 1 + totalNaturalWidth - totalMinWidth;
 		let centerW = centerMinWidth + ((centerNaturalWidth - centerMinWidth) * ((centerNaturalWidth - centerMinWidth) / totalWant));
 
 		leftWidth = ((allocWidth - centerW)/2);
